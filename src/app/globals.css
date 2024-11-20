@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #0B1F3A;
+  --accent: #007FFF;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
