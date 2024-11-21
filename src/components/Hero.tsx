@@ -37,31 +37,26 @@ export default function Hero() {
   ]
 
   return (
-    <div id="home" className="relative bg-[#0B1F3A] pt-20 overflow-hidden">
+    <div id="home" className="relative bg-[#0B1F3A] pt-12 overflow-hidden">
       <motion.div
         className="absolute inset-0 z-0"
-        animate={{
-          backgroundPosition: ['0% 0%', '100% 100%'],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          repeatType: 'reverse',
-        }}
+        animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
+        transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }}
         style={{
           backgroundImage: 'radial-gradient(circle, #1a3b66 10%, transparent 10%)',
           backgroundSize: '50px 50px',
         }}
       />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+        <div className="grid md:grid-cols-2 grid-cols-1 gap-8 items-center">
+          {/* Left Section */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
             <motion.h1
-              className="text-4xl md:text-6xl font-bold text-white leading-tight"
+              className="text-3xl sm:text-5xl font-bold text-white leading-tight"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
@@ -69,7 +64,7 @@ export default function Hero() {
               Transform Your Future Through Global Education
             </motion.h1>
             <motion.p
-              className="mt-6 text-xl text-gray-300"
+              className="mt-4 text-sm sm:text-lg text-gray-300"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.5 }}
@@ -77,29 +72,31 @@ export default function Hero() {
               Your journey to international education starts here. Expert guidance for studying abroad, visa assistance, and university placements.
             </motion.p>
             <motion.div
-              className="mt-8 flex gap-4"
+              className="mt-6 flex flex-col sm:flex-row gap-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.5 }}
             >
-              <Link href="/#contact" className="bg-[#007FFF] text-white px-8 py-4 rounded-md font-medium hover:bg-blue-600 flex items-center gap-2 transition-colors duration-300">
+              <Link href="/#contact" className="bg-[#007FFF] text-white px-6 py-3 rounded-md font-medium hover:bg-blue-600 flex items-center gap-2 transition-colors duration-300">
                 Get Started <ArrowRight className="h-5 w-5" />
               </Link>
-              <Link href="/#services" className="border border-white text-white px-8 py-4 rounded-md font-medium hover:bg-white hover:text-[#0B1F3A] transition-colors duration-300">
+              <Link href="/#services" className="border border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-[#0B1F3A] transition-colors duration-300">
                 Learn More
               </Link>
             </motion.div>
           </motion.div>
+
+          {/* Right Section */}
           <motion.div
-            className="relative h-[400px]"
-            initial={{ opacity: 0, scale: 0.8 }}
+            className="relative h-[300px] sm:h-[400px] w-full"
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
             {mounted && (
               <Slider {...sliderSettings}>
                 {images.map((src, index) => (
-                  <div key={index} className="relative h-[400px]">
+                  <div key={index} className="relative h-[300px] sm:h-[400px]">
                     <Image
                       src={src}
                       alt={`Students studying abroad ${index + 1}`}
